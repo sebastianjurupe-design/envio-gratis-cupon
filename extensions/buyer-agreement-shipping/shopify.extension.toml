@@ -1,0 +1,23 @@
+api_version = "2026-01"
+
+[[extensions]]
+name = "t:name"
+handle = "buyer-agreement-shipping"
+type = "function"
+uid = "190e33e8-d563-eb1d-2b4b-f66e267ebe52c446e74d"
+description = "t:description"
+
+  [[extensions.targeting]]
+  target = "cart.lines.discounts.generate.run"
+  input_query = "src/cart_lines_discounts_generate_run.graphql"
+  export = "cart_lines_discounts_generate_run"
+
+  [[extensions.targeting]]
+  target = "cart.delivery-options.discounts.generate.run"
+  input_query = "src/cart_delivery_options_discounts_generate_run.graphql"
+  export = "cart_delivery_options_discounts_generate_run"
+
+  [extensions.build]
+  command = "cargo build --target=wasm32-unknown-unknown --release"
+  path = "target/wasm32-unknown-unknown/release/buyer-agreement-shipping.wasm"
+  watch = [ "src/**/*.rs" ]

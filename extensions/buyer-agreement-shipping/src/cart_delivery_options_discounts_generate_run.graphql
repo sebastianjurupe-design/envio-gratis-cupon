@@ -1,0 +1,15 @@
+query Input {
+  cart {
+    deliveryType: attribute(key: "Tipo de entrega") {
+      value
+    }
+    deliveryGroups {
+      deliveryOptions {
+        handle
+      }
+    }
+  }
+  discount {
+    discountClasses
+  }
+}

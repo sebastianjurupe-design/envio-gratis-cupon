@@ -1,0 +1,16 @@
+client_id = "3820aa525faed9b120e111c0f76780fb"
+name = "envio-gratis-cupon"
+application_url = "https://shopify.dev/apps/default-app-home"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2026-04"
+
+[access_scopes]
+scopes = "write_discounts"
+
+[auth]
+redirect_urls = ["https://shopify.dev/apps/default-app-home/api/auth"]
